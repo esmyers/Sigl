@@ -1,0 +1,344 @@
+@font-face {
+	font-family: BryantWebRegular;
+	src: url('http://wimcloud.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'), 
+		url('http://wimcloud.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot'),
+		url('http://http://23.22.93.5/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'), 
+		url('http://http://23.22.93.5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot');
+
+
+}
+
+@font-face {
+	font-family: BryantWebMedium;
+	src: url('http://wimcloud.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Medium.otf'), 
+		url('http://wimcloud.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebMedium.eot'),
+		url('http://23.22.93.5/fonts/Bryant2Combo/Bryant2/Bryant-Medium.otf'), 
+		url('http://23.22.93.5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebMedium.eot');
+
+
+
+}
+
+@font-face {
+	font-family: BryantWebBold;
+	src:	url('http://wimcloud.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Bold.otf'), 
+		url('http://wimcloud.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebBold.eot'),
+		url('http://23.22.93.5/fonts/Bryant2Combo/Bryant2/Bryant-Bold.otf'), 
+		url('http://23.22.93.5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebBold.eot');
+}
+
+/*overrides default jquery widget font*/
+.ui-widget{
+	font-family: BryantWebRegular, "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+}
+
+.boldFont{
+	font-family: BryantWebBold, "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+}
+
+.mediumFont{
+	font-family: BryantWebMedium, "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+}
+
+.regularFont{
+	font-family: BryantWebRegular, "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+}
+
+#siteNameValue{
+	word-wrap: break-word;
+}
+
+#titleContainer{ 
+	position:relative;
+	top:10px;
+	/*top:15px;*/
+	/*margin-top:10px;*/
+	margin-bottom:10px;
+	margin-left:20px;
+	/*add in max width to manage long titles*/
+	max-width: 625px;
+	display:inline-block;
+	/*overflow:auto;*/
+}
+
+#closeButtonContainer{
+	width:30px;
+	float: right;
+}
+
+.closeButton{
+	cursor:pointer;
+	z-index: 1;
+	float:right;
+	margin:5px;
+	border: 0px;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border: 0px solid #AAAAB5;
+}
+
+.closeButton:hover{
+	box-shadow:0 0 5px #e7e4ce;
+}
+
+.popupContainer{
+	/*MUST ALSO CHANGE HEIGHT/WIDTH OF .tabbedContainer*/
+	/*height: 350px;*/ /*short container height option*/
+	height:565px;  /*standard container height*/
+	width:800px;
+	min-width:650px;
+	background-color:#59595C;
+	border-radius: 10px;
+	border: 1px solid #E7E4CE;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	font-family: BryantWebRegular, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.tabbedContainer{
+	/*height:290px;*/ /*short container height option*/
+	height:500px;  /*standard container height*/
+	float:left;
+	/*must also look @ width of .popupContainer*/
+	width:775px;
+	min-width: 640px;
+	margin:10px;
+	/*position: relative;*/
+	/*top:20px;*/
+	background:#E7E4CE,;
+}
+
+.popupTitle{
+	font-family: BryantWebBold, "Lucida Sans Unicode", "Lucida Grande", sans-serif ;
+	font-size: 16px;
+	color: #F37A49;
+	/*white-space: nowrap;
+	overflow: auto;*/
+	/*text-overflow: ellipsis;*/
+}
+
+
+.popupSubtitle{
+	font-family: BryantWebBold, "Lucida Sans Unicode", "Lucida Grande", sans-serif ;
+	font-size: 0.7em;
+	color:#E7E4CE;
+	width:200px;
+	margin-left:10px;
+	/*white-space: nowrap;
+	overflow: hidden;*/
+	/*text-overflow: ellipsis;*/
+}
+
+
+#projectLeftPanel{
+	position:relative;
+	/*approximates height of right side content column look @ #popupContainer height for guide*/
+	min-height:200px;
+	max-height:700px;
+	height:430px;
+	overflow-y:auto;
+
+	background-color:#E7E4CE;;  
+	width:150px;
+	min-width:150px;
+	max-width:150px; 
+	float:left; 
+	/*padding-left:5px;
+	padding-top:10px;*/
+	border-right: .5px solid #ccc;
+}
+
+.siteLink{
+	display:block;
+	cursor: pointer;
+	margin:0px 5px 5px 0px;
+
+}
+
+.siteLink:hover{
+	color:#F37A49;
+}
+
+.siteLink:active{
+	color:blue;
+}
+
+.inlineOrg{
+	display:inline-block;
+}
+
+/*Set font size for outer and inner tabs -- will need to change to em to standardize in browser*/
+.tabStyle .ui-tabs-anchor{
+	font-size: 10px;
+}
+
+.ui-tabs .ui-tabs-panel{
+	overflow:visible;
+}
+
+.innerTabStyle .ui-tabs-anchor{
+	font-size: 10px;
+	letter-spacing: 1px;
+}
+
+/*for the tab text*/
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+	font-family: BryantWebBold;
+}
+
+.ui-widget-content{
+	font-size:15px !important;
+	color:#59595C !important;
+}
+
+/*overrides color set in ui-widget-content*/
+.contactName{
+	/*color:#000000;*/
+	font-family: BryantWebBold, "Lucida Sans Unicode", "Lucida Grande", sans-serif ;
+}
+
+.innerTabStyle .ui-corner-top{
+	border-radius: 0px;
+	-moz-border-radius:none;
+	-webkit-border-radius:none;
+}
+
+.ui-tabs .ui-tabs-nav li{
+	margin:0px;
+
+}
+
+/*if content exceeds max popup window height, scroll*/
+.ui-widget-content{
+	overflow-y:auto;
+}
+
+.innerTabStyle .ui-tabs, .innerTabStyle .ui-tabs-panel{
+	padding:5px 5px 5px 0px;
+
+}
+
+.innerTabStyle .ui-state-active a, .innerTabStyle .ui-state-active a:link, .innerTabStyle .ui-state-active a:visited {
+	background-color: #F37A49;
+}
+
+.ui-state-default .ui-corner-top{
+	background-color:red;
+}
+
+.innerTabStyle .ui-widget-header{
+	background:none repeat scroll 0% 0%;
+	border:0px none;
+}
+
+#siteInfoTab1 #siteInfoTab{
+	width: 100px;
+}
+
+.contentPaneHeaders{
+	color:#F37A49;
+	margin-bottom:10px;
+	padding-top:5px;
+	font-family: BryantWebBold, "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+}
+
+.projectListItem{
+	padding-top:5%;
+	padding-bottom:5%;
+	text-align: center;
+}
+
+.projectListItem:hover{
+	color:#F37A49;
+}
+
+.active{
+	background-color:#D0CDB9;
+}
+
+/*apply class to div wherever a divider line is needed*/
+.dividerLine{
+	margin-top:10px; 
+	margin-bottom:5px; 
+	border-bottom:1px solid #59595C;
+}
+
+.shortDividerLine{
+	margin-top:5px;
+	margin-bottom:5px; 
+	border-bottom:1px solid #59595C;
+}
+
+/*styles project popup tab2 inner tabs*/
+#sitesTabMainContentWrapper{
+	float:left; 
+	max-width:550px;
+	min-width:300px;
+	padding-left:10px;
+	border:0px;
+	overflow:visible;
+
+}
+
+/*span {
+	padding-bottom:20px;
+}*/
+
+/*.dataLabel span{
+	padding-bottom: 20px;
+}
+
+.dataValue span{
+	padding-bottom: 20px;
+}*/
+
+.loader{
+	position: absolute;
+	/*height:475px;*/ /*original height*/
+	height: 800px; /*greater height to accommodate large amounts of data in parameters tab*/
+	width:721px;
+	/*display: table !important;*/
+	vertical-align:middle;
+	text-align:center;
+	background: url(../images/loading_black.gif) no-repeat;
+	background-position: 50% 25%; /*horiz. pos. ,  vert. pos*/
+	background-color:#E7E4CE;
+	opacity: 0.74;
+	z-index: 99;
+}
+
+
+#loading{
+	display:table-cell;
+	vertical-align:middle;
+	/*height: 800px;
+	width: 721px;*/
+}
+
+#tabContent{
+	height: 100%;
+}
+ 
+#siteInnerTabContent span{
+	padding-bottom:25px;
+}
+
+.dataWrapper{
+	margin-bottom: 5px;
+
+}
+
+/*Standard Colors list
+
+orange = #F37A49
+
+cream = #E7E4CE
+
+dark gray = #59595C
+
+teal = #79F2F2
+
+
+
+*/

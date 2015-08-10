@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Project POPUP</title>
+
+<!--<script src="http://knockoutjs.com/downloads/knockout-3.0.0.js" type="text/javascript"></script>-->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<!--<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>-->
+<script src="./ProjectPopup/ProjectPopup.js" type="text/javascript"></script>
+
+<!--<link rel="stylesheet" type="text/css" href="styles/popup.css">-->
+
+
+</head>
+
+<body>
+  <!--<button onclick="showPopup()">SHOW</button>-->
+  <div id="projectPopupContainer" class="popupContainer" style="display:none;">
+      <div id="titleContainer">
+          <span class="popupTitle" data-bind="text: prjProjectName"></span>
+      </div>
+      <div class="closeButton" style="" onclick='closeProjectPopup()'>Close</div>
+      <div id="projectTabbedContainer" class="tabbedContainer"  class="tabStyle">
+          <ul class="tabs">
+              <li><a href="#tab1">PROJECT SUMMARY</a></li>
+              <li><a href="#tab2">PROJECT SITES</a></li>
+              <li><a href="#tab3">DATA/PUBLICATIONS</a></li>
+              <li><a href="#tab4">CONTACT</a></li>
+          </ul>
+          <div id="tabContent" >
+            <div id="tab1">
+                <!--Project name value set in SitePopup.js-->
+                <div id="ProjectName" class="contentPaneHeaders"  data-bind="text: prjProjectName" style="margin-bottom:10px;"></div>
+
+                <!--Divider Line-->
+                <div class="dividerLine"> </div>
+               
+                <span style='float:left;' class="dataLabel">ORGANIZATIONS:</span>
+                <!--probably will want to loop and set programmatically-->
+                <div style="display:inline;" class="dataValue" id="org1Value">ORG1,&nbsp </div>
+                <div style="display:inline;" class="dataValue" id="org2Value">ORG2,&nbsp</div>
+                <div style="display:inline;" class="dataValue"id="org3Value">ORG3</div><br/>
+
+                <span  class="dataLabel">PROJECT WEBSITE:</span>
+                <a href="http://www.google.com" id="projectWebsiteValue"> WEB LINK </a><br/>
+
+                <span class="dataLabel">START DATE:</span>
+                <span class="dataValue"id="projectStartDateValue"></span><br/>
+
+                <span class="dataLabel">END DATE:</span>
+                <span class="dataValue"id="projectEndDateValue"></span><br/>
+
+                <span class="dataLabel">PROJECT OBJECTIVE:</span>
+                <span class="dataValue"id="projectObjectiveValue"></span><br/>
+
+                <span class="dataLabel">PROJECT DESCRIPTION:</span>
+                <span class="dataValue"id="projectDescriptionValue"></span><br/>
+
+                <span class="dataLabel">PROJECT KEYWORDS:</span>
+                <span class="dataValue" id="projectKeywordsValue"></span><br/>
+
+                <span class="dataLabel">ADDITIONAL PROJECT INFORMATION:</span>
+                <span class="dataValue"id="additionalProjectInfoValue"></span><br/>
+
+                <!--Divider Line-->
+                <div class="dividerLine"> </div>
+
+            </div>
+            <div id="tab2" class="innerTabStyle">
+              
+              <div class="contentPaneHeaders">PROJECT SITES:</div>
+              <!--Divider Line-->
+              <div class="dividerLine"> </div>
+              <!--Left Side Panel     divider styling in css doc-->
+              <div id="projectLeftPanel">
+                  <!--Append tag for each site in selected project -->
+                  <a class="siteLink">site1</a> 
+                  <a class="siteLink">site2</a>
+                  <a class="siteLink">site3</a> 
+                  <a class="siteLink">site4</a> 
+                  <a class="siteLink">site5</a>
+                  <a class="siteLink">site6</a> 
+              </div>
+
+              <div id='tab2MainContentWrapper'>
+                <span>SITE NAME: </span>
+                <span id="siteNameVal">****TITLE HERE*****</span>
+                  <ul style="display:inline;">
+                      <li><a href="#siteInfoTab1">SITE DETAILS</a></li>
+                      <li><a href="#siteInfoTab2">PARAMETERS SAMPLED</a></li>
+                  </ul>
+                  <div id="innerTabContent">
+                      <div id="siteInfoTab1">
+                          <span  class="dataLabel">LOCATION (Lat., Long):</span>
+                          <span class="dataValue"> latitudeVALUE, longitudeVALUE</span><br/>
+                        
+                          <span class="dataLabel">STATE:</span>
+                          <span class="dataValue" id="stateValue"></span><br/>
+
+                          <span class="dataLabel">COUNTRY:</span>
+                          <span class="dataValue" id="CountryValue"></span><br/>
+
+                          <span class="dataLabel">GREAT LAKE:</span>
+                          <span class="dataValue" id="GreatLakeValue"></span><br/>
+
+                          <span class="dataLabel">WATERBODY:</span>
+                          <span class="dataValue" id="waterbodyValue"></span><br/>
+
+                          <span class="dataLabel">WATERSHED (HUC8):</span>
+                          <span class="dataValue" id="watershedValue"></span><br/>
+
+                          <span class="dataLabel">SITE DESCRIPTION:</span>
+                          <span class="dataValue" id="siteDescriptionValue"></span><br/>
+
+                          <span class="dataLabel">START DATE:</span>
+                          <span class="dataValue" id="siteStartDateValue"></span><br/>
+
+                          <span class="dataLabel">END DATE:</span>
+                          <span class="dataValue" id="siteEndDateValue"></span><br/>
+
+                          <span class="dataLabel">STATUS:</span>
+                          <span class="dataValue" id="statusValue"></span><br/>
+
+                          <span class="dataLabel">RESOURCE COMPONENT:</span>
+                          <span class="dataValue" id="resourceComponentValue"></span><br/>
+
+                          <span style='float:left;class="dataLabel"'>MEDIA:</span>
+                          <span class="dataValue" id="mediaValue"></span><br/>
+
+                          <span class="dataLabel">SAMPLING FREQUENCY:</span>
+                          <span class="dataValue" id="samplingFrequencyValue"></span><br/>
+
+                          <span class="dataLabel">SAMPLING PLATFORM:</span>
+                          <span class="dataValue" id="samplingPlatformValue"></span><br/>
+
+                          <span class="dataLabel">ADDITIONAL SITE INFORMATION:</span>
+                          <span class="dataValue" id="additionalSiteInfoValue"></span><br/>
+
+                          <span class="dataLabel">SITE WEBSITE:</span>
+                          <a href="http://www.wim.usgs.gov" id="siteWebsiteValue"> WEB LINK</a><br/>
+                      </div>
+                      <!--END site tab1-->
+                      <div id="siteInfoTab2">
+                          <div class="columnWrapper">
+
+                            <!--PARAMETER TYPE BLOCKS TO BE BUILT AND ADDED PROGRAMMATICALLY.  ADD NEW PARAMETER TYPE BLOCK FOR EACH PARAMETER TYPE AND A <SPAN> FOR EACH PARAMETER-->
+                            <!--PARAMETER TYPE BLOCK-->
+                              <div id="ProjectDataHeader" class="contentPaneHeaders" style="margin-top:10px;">PARAMETER Type 1</div>
+                               <span id="DataHostingEntityValue">Param1</span><br/>
+                              <span id="DataHostingEntityValue">Param2</span><br/>
+                              <span id="DataHostingEntityValue">Param3</span><br/>
+                              <!--END PARAMETER TYPE BLOCK-->
+                            
+                              <!--PARAMETER TYPE BLOCK-->
+                              <div id="ProjectDataHeader" class="contentPaneHeaders" style="margin-top:10px;">Parameter Type 2</div>
+                              <span id="DataHostingEntityValue">Param1</span><br/>
+                              <span id="DataHostingEntityValue">Param2</span><br/>
+                              <span id="DataHostingEntityValue">Param3</span><br/>
+                              <!--END PARAMETER TYPE BLOCK-->
+
+                          </div>
+                      </div>  <!--END INNER tab2-->
+
+                    </div>  <!--END innerTabContent -->
+                     
+                  </div> <!--end Tab2MainContentWrapper-->
+            </div>  <!--END MAIN tab2--> 
+              
+
+            <div id="tab3">
+                
+                <div id="ProjectDataHeader" class="contentPaneHeaders" style="margin-bottom:10px;">PROJECT DATA</div>
+
+                <span class="dataLabel">DATA MANAGEMENT SYSTEM:</span>
+                <span class="dataValue" id="DMSValue">VAL</span><br/>
+
+                <span class="dataLabel">DATA HOSTING ENTITY:</span>
+                <span class="dataValue" id="DataHostingEntityValue">VAL</span><br/>
+
+                <span class="dataLabel">ONLINE DATA LOCATION (IF AVAILABLE):</span>
+                <span class="dataValue" id="DataHostingEntityValue">VAL</span><br/>
+
+                <!--divider Line-->
+                <div class='dividerLine'> </div>
+
+                <div id="ProjectDataHeader" class="contentPaneHeaders" style="margin-top:10px;">PUBLICATIONS</div>
+
+                <!--PUBLICATION BLOCK TODO SET PROGRAMATICALLY.  ADD NEW BLOCK FOR EACH PUBLICATION-->
+                <span class="dataLabel">PUBLICATION TITLE:</span>
+                <span class="dataValue" id="DataHostingEntityValue">val</span><br/>
+
+                <span class="dataLabel">PROJECT DESCRIPTION:</span>
+                <span class="dataValue" id="DataHostingEntityValue">VAL</span><br/>
+
+                <span class="dataLabel">PROJECT KEYWORDS:</span>
+                <span class="dataValue" id="DataHostingEntityValue">VAL</span><br/>
+                <!--END PUBLICATION BLOCK-->
+
+                <!--PUBLICATION BLOCK TODO SET PROGRAMATICALLY-->
+                <span class="dataLabel">PUBLICATION TITLE:</span>
+                <span class="dataValue" id="DataHostingEntityValue">val</span><br/>
+
+                <span class="dataLabel">PROJECT DESCRIPTION:</span>
+                <span class="dataValue" id="DataHostingEntityValue">VAL</span><br/>
+
+                <span class="dataLabel">PROJECT KEYWORDS:</span>
+                <span class="dataValue" id="DataHostingEntityValue">VAL</span><br/>
+                <!--END PUBLICATION BLOCK-->
+            </div>
+
+
+            <div id="tab4">
+              <div id="ProjectDataHeader" class="contentPaneHeaders" style="margin-bottom:10px;">PROJECT CONTACTS</div>
+              
+              <!--CONTACT BLOCKS TO BE ADDED PROGRAMMATICALLY.  WILL NEED TO REPEAT FOR ALL CONTACTS LISTED.-->
+              <!--CONTACT BLOCK-->
+              <div class="contactName">FRED LUCKEY</div>
+              <div class="contactOrg">U.S. Environmental Protection Agency, Reg. 2</div>
+              <div class="contactEmail">luckey.frederick@epa.gov</div>
+              <div class="contactPhone">212-637-3853</div><br/>
+              <!--END CONTACT BLOCK-->
+
+
+              <!--CONTACT BLOCK-->
+               <div class="contactName">FRED LUCKEY</div>
+              <div class="contactOrg">U.S. Environmental Protection Agency, Reg. 2</div>
+              <div class="contactEmail">luckey.frederick@epa.gov</div>
+              <div class="contactPhone">212-637-3853</div><br/>
+              <!--END CONTACT BLOCK-->
+            </div>
+
+      </div>
+      
+  </div>
+  
+</body>
+</html>

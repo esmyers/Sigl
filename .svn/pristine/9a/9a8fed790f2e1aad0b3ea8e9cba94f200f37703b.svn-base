@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SIGL POPUP</title>
+
+<!--
+Copyright: 2014 WiM - USGS
+Author: Erik Myers USGS Wisconsin Internet Mapping (WiM)
+Created: February, 2014
+--> 
+<!--<script src="http://knockoutjs.com/downloads/knockout-3.0.0.js" type="text/javascript"></script>-->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<!--<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>-->
+<script src="./SitePopup/SitePopup.js" type="text/javascript"></script>
+<!--<link rel="stylesheet" type="text/css" href="styles/popup.css"></link>-->
+
+</head>
+
+<body>
+
+  <div id="sitePopupContainer" class="popupContainer" style="display:none">
+      <div id="closeButtonContainer">
+        <img src="./images/x20.svg" id="closeButton" class="closeButton" onclick='closeSitePopup()'></img>   
+      </div>   
+      <div id="titleContainer">
+          <span class="popupTitle" id="titleSiteName"></span>
+          <!--<span class="popupSubtitle" id="siteProjectName"></span>-->
+      </div>
+      
+      
+      
+      <div id="siteTabbedContainer"  class="tabbedContainer">
+          <ul class="tabs">
+              <li><a href="#tab1">PROJECT SUMMARY</a></li>
+              <li><a href="#tab2">DATA/PUBLICATIONS</a></li>
+              <li><a href="#tab3">CONTACT INFO</a></li>
+              <li><a href="#tab4">PROJECT SITES</a></li>
+          </ul>
+          <div id="tabContent" >
+            
+            <div id="tab1">
+
+                <div id='loadingT1' class="loader" ></div>
+                <!--Project name value set in SitePopup.js-->
+                <div id="ProjectName" class="contentPaneHeaders"></div>
+
+                <!--Divider Line-->
+                <div class="shortDividerLine"> </div>
+               
+                <!--dynamically populated from SIGLMAPPER JS-->
+                <!--<span id="orgs" class="dataLabel">ORGANIZATIONS: </span>-->
+              <div class="dataWrapper">
+                <span class="dataLabel">ORGANIZATIONS: </span>
+                <span id="orgs" class="dataValue"></span>
+              </div>
+                
+              <div class="dataWrapper">
+                <span float:left class="dataLabel">PROJECT WEBSITE:</span>
+                <span class="datavalue" id="projectWebsiteWrapper"></span>
+                <!--<a href="" class="dataValue" id="projectWebsiteValue" target="_blank">LINK</a>-->
+              </div>
+
+              <div class="dataWrapper">
+                <span class="dataLabel">PROJECT STATUS:</span>
+                <span class="dataValue" id="projectStatusValue"></span>
+              </div>
+
+              <div class="dataWrapper">
+                <span class="dataLabel">START DATE:</span>
+                <span class="dataValue" id="projectStartDateValue"></span>
+              </div>
+
+              <div class="dataWrapper">
+                <span class="dataLabel">END DATE:</span>
+                <span class="dataValue" id="projectEndDateValue"></span>
+              </div>
+
+              <div class="dataWrapper">
+                <span class="dataLabel">PROJECT OBJECTIVE:</span>
+                <span class="dataValue" id="projectObjectiveValue"></span>
+              </div>
+
+              <div class="dataWrapper">
+                <span class="dataLabel">PROJECT DURATION:</span>
+                <span class="dataValue" id="projectDurationValue"></span>
+              </div>
+
+              <div class="dataWrapper">
+                <span class="dataLabel">PROJECT DESCRIPTION:</span>
+                <span class="dataValue" id="projectDescriptionValue"></span>
+              </div>
+
+              <div class="dataWrapper">
+                <span class="dataLabel">PROJECT KEYWORDS:</span>
+                <span class="dataValue" id="projectKeywordsValue"></span>
+              </div>
+
+              <div class="dataWrapper">
+                <span class="dataLabel">ADDITIONAL PROJECT INFORMATION:</span>
+                <span class="dataValue" id="additionalProjectInfoValue"></span>
+              </div>
+
+                <!--Divider Line-->
+                <div class="dividerLine"> </div>
+
+            </div><!--end tab1-->
+            <div id="tab2">
+                
+                <div id="ProjectDataHeader" class="contentPaneHeaders" style="margin-bottom:10px;">PROJECT DATA</div>
+
+                <div id="projectDataWrapper"></div>
+
+                <!--Divider Line-->
+                <div class="dividerLine"> </div>
+
+                <div id="ProjectDataHeader" class="contentPaneHeaders" style="margin-bottom:10px;">PUBLICATIONS</div>
+
+                <!--dynamically fill div based on ProjectPubs -->
+                <div id="pubsWrapper"></div>
+
+                <!--END PUBLICATION INFO BLOCK-->
+
+            </div><!--end tab2-->
+            <div id="tab3">
+              <div id="ProjectDataHeader" class="contentPaneHeaders" style="margin-bottom:10px;">PROJECT CONTACTS</div>
+              <!--contact info added here dynamically in Jquery-->
+              <div id="contactsWrapper"></div>
+            </div><!--end tab3-->
+
+            <div id="tab4" class="innerTabStyle" style="height:100%">
+              
+              <div id="loading" class="loader" ></div>
+              
+              <div id="projectLeftPanel">
+                  <!--Append tag for each site in selected project -->
+              </div>
+            
+
+              <div id='sitesTabMainContentWrapper'>
+                
+                <span id="SiteName" class="contentPaneHeaders">SITE NAME:</span>
+                <span class="dataValue boldFont" id="siteNameValue" ></span>
+                  <!--style note: margin to top of inner tabs to give space between site name title -->
+                  <ul style="margin-top:10px;">
+                      <li><a href="#siteInfoTab1">SITE DETAILS</a></li>
+                      <li><a href="#siteInfoTab2">PARAMETERS SAMPLED</a></li>
+                  </ul>
+                  <div id="siteInnerTabContent">
+                      <div id="siteInfoTab1">
+                        <div class="dataWrapper">
+                          <span  class="dataLabel">LOCATION (Lat., Long):</span>
+                          <span class="dataValue" id="locationValue"></span>
+                        </div>
+
+                        
+                        <div class="dataWrapper">
+                          <span class="dataLabel">STATE:</span>
+                          <span class="dataValue" id="stateValue"></span>
+                        </div>
+
+                        <div class="dataWrapper">
+                          <span class="dataLabel">COUNTRY:</span>
+                          <span class="dataValue" id="CountryValue"></span>
+                        </div>
+
+                        <div class="dataWrapper">
+                          <span class="dataLabel">GREAT LAKE:</span>
+                          <span class="dataValue" id="GreatLakeValue"></span>
+                        </div>
+
+                        <div class="dataWrapper">
+                          <span class="dataLabel">WATERBODY:</span>
+                          <span class="dataValue" id="waterbodyValue"></span>
+                        </div>
+
+                        <div class="dataWrapper">
+                          <span class="dataLabel">WATERSHED (HUC8):</span>
+                          <span class="dataValue" id="watershedValue"></span>
+                        </div>
+
+                        <div class="dataWrapper">
+                          <span class="dataLabel">SITE DESCRIPTION:</span>
+                          <span class="dataValue" id="siteDescriptionValue"></span>
+                        </div>
+
+                        <div class="dataWrapper">
+                          <span class="dataLabel">START DATE:</span>
+                          <span class="dataValue" id="siteStartDateValue"></span>
+                        </div>
+
+                        <div class="dataWrapper">
+                          <span class="dataLabel">END DATE:</span>
+                          <span class="dataValue" id="siteEndDateValue"></span>
+                        </div>
+
+                        <div class="dataWrapper">
+                          <span class="dataLabel">STATUS:</span>
+                          <span class="dataValue" id="statusValue"></span>
+                        </div>
+
+                        <div class="dataWrapper">
+                          <span class="dataLabel">RESOURCE COMPONENT:</span>
+                          <span class="dataValue" id="resourceComponentValue"></span>
+                        </div>
+
+                        <div class="dataWrapper">
+                          <span class="dataLabel">MEDIA:</span>
+                          <span class="dataValue" id="mediaValue"></span>
+                        </div>
+
+                        <div class="dataWrapper">
+                          <span class="dataLabel">SAMPLING FREQUENCY:</span>
+                          <span class="dataValue" id="samplingFrequencyValue"></span>
+                        </div>
+
+                        <div class="dataWrapper">
+                          <span class="dataLabel">SAMPLING PLATFORM:</span>
+                          <span class="dataValue" id="samplingPlatformValue"></span>
+                        </div>
+
+                        <div class="dataWrapper">
+                          <span class="dataLabel">ADDITIONAL SITE INFORMATION:</span>
+                          <span class="dataValue" id="additionalSiteInfoValue"></span>
+                        </div>
+
+                        <div class="dataWrapper">
+                          <span class="dataLabel">SITE WEBSITE:</span>
+                          <a class="dataValue" href=""id="siteWebsiteValue" target="_blank"></a>
+                        </div>
+                      </div> <!--end siteInfoTab1-->
+                      
+                      <div id="siteInfoTab2">
+                        <!--<div class="contentPaneHeaders">BIOLOGICAL</div>-->
+                        <div id="bioWrapper"></div>
+
+                        <!--<div class="contentPaneHeaders">CHEMICAL</div>-->
+                        <div id="chemWrapper"></div>
+
+                        <!--<div class="contentPaneHeaders">MICROBIOLOGICAL</div>-->
+                        <div id="microbioWrapper"></div>
+
+                        <!--<div class="contentPaneHeaders">PHYSICAL</div>-->
+                        <div id="physWrapper"></div>
+
+                        <!--<div class="contentPaneHeaders">TOXICOLOGICAL</div>-->
+                        <div id="toxicWrapper"></div>
+                      </div> <!--end siteInfoTab2-->
+                  </div>  <!--end siteInnerTabContent-->
+                
+              </div>  <!--end sitesMaintabContent-->
+
+            </div><!--end tab4-->
+
+
+
+          </div><!--end tabContent-->
+      </div><!--end siteTabbedContainer-->
+  </div> <!--endSitePopupContainer-->
+  
+</body>
+
+</html>
