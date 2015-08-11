@@ -1,8 +1,8 @@
 @font-face {
 	font-family: BryantWebRegular;
 	src: 
-		url('http://54.84.124.192/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'), 
-		url('http://54.84.124.192/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot'),
+		url('http://sigl.wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'), 
+		url('http://sigl.wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot'),
 		url('http://wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot')
 
 }
@@ -10,16 +10,16 @@
 @font-face {
 	font-family: BryantWebMedium;
 	src: 
-		url('http://54.84.124.192/fonts/Bryant2Combo/Bryant2/Bryant-Medium.otf'), 
-		url('http://54.84.124.192/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebMedium.eot'),
+		url('http://sigl.wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Medium.otf'), 
+		url('http://sigl.wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebMedium.eot'),
 		url('http://wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebMedium.eot')
 }
 
 @font-face {
 	font-family: BryantWebBold;
 	src: 
-		url('http://54.84.124.192/fonts/Bryant2Combo/Bryant2/Bryant-Bold.otf'), 
-		url('http://54.84.124.192/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebBold.eot'),
+		url('http://sigl.wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Bold.otf'), 
+		url('http://sigl.wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebBold.eot'),
 		url('http://wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebBold.eot')
 }
 

@@ -73,10 +73,10 @@ var screenPtY;
 
 
 //PUBLIC IP FOR NEW SIGL INSTANCE
-var servicesURL = "http://54.84.124.192:6080/arcgis/rest/services/SIGL/SIGLMapper/MapServer/";
+var servicesURL = "http://sigl.wim.usgs.gov:6080/arcgis/rest/services/SIGL/SIGLMapper/MapServer/";
 //var servicesURL = "http://54.92.175.17:6080/arcgis/rest/services/SIGL/SIGLMapper/MapServer/";
 
-var endpointRoot = "http://54.84.124.192/LaMPServices/";
+var endpointRoot = "http://sigl.wim.usgs.gov/LaMPServices/";
 //var endpointRoot = "http://54.92.175.17/LaMPServices/";
 
 
@@ -591,7 +591,7 @@ function init() {
             url: endpointRoot + queryString,
             headers:{
                 Accept: 'application/json',
-                Host: '54.84.124.192'
+                Host: 'sigl.wim.usgs.gov'
             },
             //build a string to be used as a layer definition
             success: function(data){
@@ -707,7 +707,7 @@ function init() {
             url: endpointRoot + queryString,
             headers:{
                 Accept: 'application/json',
-                Host: '54.84.124.192'
+                Host: 'sigl.wim.usgs.gov'
             },
             //build a string to be used as a layer definition
             success: function(data){
@@ -963,7 +963,7 @@ function showSitePopup(projectList, siteList){
 			url: endpointRoot + "Sites/ProjectSitesInfo?ProjectId=" + projectID,
 			headers:{
 				Accept: "application/json",
-				Host: "54.84.124.192"
+				Host: "sigl.wim.usgs.gov"
 			},
 			success: function(data){
 
@@ -1088,7 +1088,7 @@ function fillPopupFields(siteId){
         url: endpointRoot + "Sites/SiteInformation?siteId=" + siteId,
         headers:{
             Accept: "application/json",
-            Host: "54.84.124.192"
+            Host: "sigl.wim.usgs.gov"
         },
         global:false,
         success: function(data){
@@ -1809,7 +1809,7 @@ function showProjectPopup(project){
             url: endpointRoot + "Sites/ProjectSitesInfo?ProjectId=" + projectID,
             headers:{
                 Accept: "application/json",
-                Host: "54.84.124.192"
+                Host: "sigl.wim.usgs.gov"
             },
             success: function(data){
                 

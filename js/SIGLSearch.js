@@ -26,7 +26,7 @@ function searchLogic(){
 		cache: false,
 		headers:{
 			Accept: 'application/json',
-			Host: '54.84.124.192'
+			Host: 'sigl.wim.usgs.gov'
 		},
 		success: function(data){
 			if (data.length>0){
@@ -65,7 +65,7 @@ function searchLogic(){
 		url: endpointRoot + "ResourceTypes",
 		headers:{
 			Accept: "application/json",
-			Host: "54.84.124.192"
+			Host: "sigl.wim.usgs.gov"
 		},
 		success: function(data){
 			if (data.length > 0){
@@ -87,7 +87,7 @@ function searchLogic(){
 		url: endpointRoot + "Media",
 		headers:{
 			Accept: "application/json",
-			Host: "54.84.124.192"
+			Host: "sigl.wim.usgs.gov"
 		},
 		success: function(data){
 			if (data.length > 0){
@@ -113,7 +113,7 @@ function searchLogic(){
 		url:  endpointRoot +'Lakes',
 		headers:{
 			Accept: 'application/json',
-			Host: '54.84.124.192'
+			Host: 'sigl.wim.usgs.gov'
 		},
 		success: function(data){
 			if (data.length > 0){
@@ -135,7 +135,7 @@ function searchLogic(){
 		url: endpointRoot + "states",
 		headers:{
 			Accept: "application/json",
-			Host: "54.84.124.192"
+			Host: "sigl.wim.usgs.gov"
 		},
 		success: function(data){
 			if (data.length > 0){
@@ -156,7 +156,7 @@ function searchLogic(){
 		url: endpointRoot + "projects",
 		headers:{
 			Accept: "application/json",
-			Host: "54.84.124.192"
+			Host: "sigl.wim.usgs.gov"
 		},
 		success: function(data){
 			if (data.length > 0){
@@ -183,7 +183,7 @@ function searchLogic(){
 		url: endpointRoot + "getUniqueOrgs",
 		headers:{
 			Accept: "application/json",
-			Host: "54.84.124.192"
+			Host: "sigl.wim.usgs.gov"
 		},
 		success: function(data){
 			if (data.length > 0){
@@ -213,7 +213,7 @@ function searchLogic(){
 		url: endpointRoot + "objectives",
 		headers:{
 			Accept: "application/json",
-			Host: "54.84.124.192"
+			Host: "sigl.wim.usgs.gov"
 		},
 		success: function(data){
 			if (data.length > 0){
@@ -233,7 +233,7 @@ function searchLogic(){
 		url: endpointRoot + "ProjectDuration",
 		headers:{
 			Accept: "application/json",
-			Host: "54.84.124.192"
+			Host: "sigl.wim.usgs.gov"
 		},
 		success: function(data){
 			if (data.length > 0){
@@ -255,7 +255,7 @@ function searchLogic(){
 		url: endpointRoot + "ProjectStatus",
 		headers:{
 			Accept: "application/json",
-			Host: "54.84.124.192"
+			Host: "sigl.wim.usgs.gov"
 		},
 		success: function(data){
 			if (data.length > 0){
