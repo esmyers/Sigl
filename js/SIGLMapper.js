@@ -92,9 +92,9 @@ function init() {
     //esri.config.defaults.io.corsEnabledServers.push("http://107.20.96.245:6080/");
 
 	
-	//esri.config.defaults.io.proxyUrl = "/SIGLProxies/proxy.ashx";
+	esri.config.defaults.io.proxyUrl = "/SIGLProxies/proxy.ashx";
 	
-	//esri.config.defaults.io.alwaysUseProxy = true;
+	esri.config.defaults.io.alwaysUseProxy = true;
 	
 	//sets up the onClick listener for the USGS logo
 	dojo.connect(dojo.byId("usgsLogo"), "onclick", showUSGSLinks);
@@ -151,11 +151,11 @@ function init() {
     tribalResLayer.setVisibleLayers([4]);
     legendLayers.push({layer:tribalResLayer,title:'Tribal Reservation Boundaries'});
 
-	var cededTribalLayer = new esri.layers.ArcGISDynamicMapServiceLayer(servicesURL, {
+	var cededTribalLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://commons.wim.usgs.gov/arcgis/rest/services/AIR_NDGA/AIR_NDGA/MapServer/", {
         "opacity": 0.50,
         "visible": false
         });
-    cededTribalLayer.setVisibleLayers([5]);
+    cededTribalLayer.setVisibleLayers([0]);
     legendLayers.push({layer:cededTribalLayer,title:'Ceded Tribal Boundaries'});
 
     var GLRINetLayer = new esri.layers.ArcGISDynamicMapServiceLayer(servicesURL, {

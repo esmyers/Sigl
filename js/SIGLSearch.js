@@ -24,10 +24,10 @@ function searchLogic(){
 		type: 'Get',
 		url:  endpointRoot +'parameters',
 		cache: false,
-		headers:{
+		/*headers:{
 			Accept: 'application/json',
 			Host: 'sigl.wim.usgs.gov'
-		},
+		},*/
 		success: function(data){
 			if (data.length>0){
 				//place individual parameters into the appropriate optGroup (groups hardcoded in markup)
@@ -63,10 +63,10 @@ function searchLogic(){
 		dataType: "json",
 		type: "Get",
 		url: endpointRoot + "ResourceTypes",
-		headers:{
+		/*headers:{
 			Accept: "application/json",
 			Host: "sigl.wim.usgs.gov"
-		},
+		},*/
 		success: function(data){
 			if (data.length > 0){
 				$.each(data, function(){
@@ -85,10 +85,10 @@ function searchLogic(){
 		dataType: "json",
 		type: "Get",
 		url: endpointRoot + "Media",
-		headers:{
+		/*headers:{
 			Accept: "application/json",
 			Host: "sigl.wim.usgs.gov"
-		},
+		},*/
 		success: function(data){
 			if (data.length > 0){
 				$.each(data, function(){
@@ -111,10 +111,10 @@ function searchLogic(){
 		dataType: 'json',
 		type: 'Get',
 		url:  endpointRoot +'Lakes',
-		headers:{
+		/*headers:{
 			Accept: 'application/json',
 			Host: 'sigl.wim.usgs.gov'
-		},
+		},*/
 		success: function(data){
 			if (data.length > 0){
 				$.each(data, function(){
@@ -133,10 +133,10 @@ function searchLogic(){
 		dataType: "json",
 		type: "Get",
 		url: endpointRoot + "states",
-		headers:{
+		/*headers:{
 			Accept: "application/json",
-			Host: "sigl.wim.usgs.gov"
-		},
+			Host: "54.84.124.192"
+		},*/
 		success: function(data){
 			if (data.length > 0){
 				$.each(data, function(){
@@ -154,10 +154,10 @@ function searchLogic(){
 		dataType: "json",
 		type: "Get",
 		url: endpointRoot + "projects",
-		headers:{
+		/*headers:{
 			Accept: "application/json",
 			Host: "sigl.wim.usgs.gov"
-		},
+		},*/
 		success: function(data){
 			if (data.length > 0){
 				$.each(data, function(){
@@ -181,10 +181,10 @@ function searchLogic(){
 		dataType: "json",
 		type: "Get",
 		url: endpointRoot + "getUniqueOrgs",
-		headers:{
+		/*headers:{
 			Accept: "application/json",
 			Host: "sigl.wim.usgs.gov"
-		},
+		},*/
 		success: function(data){
 			if (data.length > 0){
 				$.each(data, function(){
@@ -211,10 +211,10 @@ function searchLogic(){
 		dataType: "json",
 		type: "Get",
 		url: endpointRoot + "objectives",
-		headers:{
+		/*headers:{
 			Accept: "application/json",
 			Host: "sigl.wim.usgs.gov"
-		},
+		},*/
 		success: function(data){
 			if (data.length > 0){
 				$.each(data, function(){
@@ -231,10 +231,10 @@ function searchLogic(){
 		dataType: "json",
 		type: "Get",
 		url: endpointRoot + "ProjectDuration",
-		headers:{
+		/*headers:{
 			Accept: "application/json",
 			Host: "sigl.wim.usgs.gov"
-		},
+		},*/
 		success: function(data){
 			if (data.length > 0){
 				$.each(data, function(){
@@ -253,10 +253,10 @@ function searchLogic(){
 		dataType: "json",
 		type: "Get",
 		url: endpointRoot + "ProjectStatus",
-		headers:{
+		/*headers:{
 			Accept: "application/json",
 			Host: "sigl.wim.usgs.gov"
-		},
+		},*/
 		success: function(data){
 			if (data.length > 0){
 				$.each(data, function(){
